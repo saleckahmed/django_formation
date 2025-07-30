@@ -1,0 +1,24 @@
+{% load django_bootstrap5 %}
+
+
+<nav class="d-flex gap-4 bg-light p-3 rounded shadow-sm">
+  <a href="/annonces/" class="text-primary text-decoration-none fw-semibold"
+    >Annonces</a
+  >
+  <a
+    href="/annonces/add-annonce"
+    class="text-primary text-decoration-none fw-semibold"
+    >Add Annonce</a
+  >
+  <a
+    href="/annonces/add-category"
+    class="text-primary text-decoration-none fw-semibold"
+    >Add Category</a
+  >
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+{% bootstrap_css %} {% bootstrap_javascript %}
