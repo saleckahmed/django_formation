@@ -33,22 +33,28 @@ class AnnonceForm(forms.ModelForm):
             })
         }
         error_messages = {
-            'titre': {
-                'required': "titre  is required",
-            }, 
-            'description': {
-                'required': "description is required",
-            },
-            'prix': {
-                'required': "prix is required",
-            },
-            'statut': {
-                'required': "statut is required",
-            },
-            'image': {
-                'required': "imageis required",
-            }
+        'titre': {
+            'required': "Title is required.",
+            'max_length': "Title is too long.",
+        },
+        'description': {
+            'required': "Description is required.",
+        },
+        'prix': {
+            'required': "Price is required.",
+            'invalid': "Enter a valid price.",
+            'min_value': "Price must be greater than 0.",
+        },
+        'statut': {
+            'required': "Status is required.",
+            'invalid_choice': "Select a valid status.",
+        },
+        'image': {
+            'required': "Image is required.",
+            'invalid': "Upload a valid image file.",
         }
+    }
+
 
 class CategoryForm(forms.ModelForm):
     class Meta: 

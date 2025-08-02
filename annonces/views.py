@@ -2,6 +2,7 @@ from .forms import CategoryForm, AnnonceForm
 from .models import Annonce, Category
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # def valides_annonces(request):
 #     valides_annonces = Annonce.objects.filter(statut = 'valide')
@@ -14,7 +15,7 @@ from django.shortcuts import render
 def annonces(request):
     annonces = Annonce.objects.all()
     return render(request, 'liste_annonces.html', {'annonces':annonces})
-
+# @login_required
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -31,7 +32,7 @@ def add_category(request):
     else:
         form = CategoryForm()
         return render(request, 'add_category.html', {'form':form})
-
+@login_required
 def add_annonce(request):
     categories = Category.objects.all()
     if request.method == 'POST':

@@ -1,4 +1,5 @@
 from django.db import models
+from authentification.models import Utilisateur
 
 
 class Category(models.Model):
@@ -19,6 +20,8 @@ class Annonce(models.Model):
     ]
     statut = models.TextField(choices=STATUT_CHOICES, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    vendeur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.titre

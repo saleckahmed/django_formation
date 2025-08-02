@@ -1,0 +1,39 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.login-container {
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+form{
+  width: 300px;
+}
+.question-text {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-custom {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.btn-custom:hover {
+  /* background-color: #495057; */
+  background-color: #000;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
